@@ -19,6 +19,17 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        Question.hpp
+        Question.cpp
+        Category.h
+        Category.cpp
+        DatabaseManager.h
+        DatabaseManager.cpp
+        GameManager.h
+        GameManager.cpp
+        addcategorydialogue.h
+        addcategorydialogue.cpp
+        addcategorydialogue.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

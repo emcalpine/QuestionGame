@@ -23,10 +23,13 @@
       <height>571</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>1</number>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
     </property>
-    <widget class="QWidget" name="tab">
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="playTab">
      <attribute name="title">
       <string>Play</string>
      </attribute>
@@ -56,7 +59,7 @@
        <string>PushButton</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="CategoryButton3">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -69,7 +72,7 @@
        <string>PushButton</string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="textBrowser">
+     <widget class="QTextBrowser" name="QuestionField">
       <property name="geometry">
        <rect>
         <x>85</x>
@@ -79,7 +82,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="textBrowser_2">
+     <widget class="QTextBrowser" name="AnswerField">
       <property name="geometry">
        <rect>
         <x>220</x>
@@ -265,6 +268,36 @@
         <y>40</y>
         <width>151</width>
         <height>441</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="CategoryEdit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>510</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="QuestionEdit">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>510</y>
+        <width>361</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="AnswerEdit">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>510</y>
+        <width>191</width>
+        <height>20</height>
        </rect>
       </property>
      </widget>
