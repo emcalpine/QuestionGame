@@ -4,6 +4,8 @@
 #include <QObject>
 #include "Category.h"
 #include "Question.hpp"
+#include <QSqlDatabase>
+#include <QSqlError>
 
 
 // TODO: Make this a singleton class.
@@ -45,15 +47,37 @@ public:
     // This operation edits a question in the database, or adds it if the ID could not be found.
     bool editQuestion(const Question& question);
 
+    // This operation returns the last error.
+    QString getLastError();
+
 
 private:
     // This operation connects to the database
     bool connect();
 
     // This opertaion disconnects from the database
-    bool disconnect();
+    void disconnect();
+
+    // This operation ensures a string is safe to pass into an SQL statement.
+    // Returns the sanitized string.
+    QString sanitizeString(
+            // The String to sanitize.
+            const QString& str,
+            // The maximum length for this string
+            int maxLength);
+
+    // This object is a handle to database
+    QSqlDatabase m_db;
+
+
 signals:
 
 };
+
+
+inline QString DatabaseManager::getLastError()
+{
+    return m_db.lastError().text();
+}
 
 #endif // DATABASEMANAGER_H

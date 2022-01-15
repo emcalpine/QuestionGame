@@ -8,6 +8,9 @@ class Category : public QObject
 {
     Q_OBJECT
 public:
+    // The default length of the question text. Unsigned as extra insurance against negative length arrays.
+    static const unsigned int sMAX_CATEGORY_NAME_LENGTH = 32;
+
     explicit Category(QObject *parent = nullptr);
 
     // Only provie an argumented constructor.

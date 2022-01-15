@@ -8,6 +8,16 @@ MainWindow::MainWindow(QWidget *parent)
     , gm()
 {
     ui->setupUi(this);
+
+    ui->QuestionField->setText(gm.getDbError());
+
+    QList<Category> cats = gm.getAllCategories();
+    QList<Category>::iterator it = cats.begin();
+    while (it != cats.end())
+    {
+        ui->CategoryListWidget->addItem(it->getName());
+        it++;
+    }
 }
 
 MainWindow::~MainWindow()

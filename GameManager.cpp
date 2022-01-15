@@ -1,10 +1,20 @@
 #include "GameManager.h"
 
+#include <iostream>
+#include <fstream>
+
 GameManager::GameManager(QObject *parent) :
     QObject(parent),
     dm()
 {
-    dm.initialize("localhost", "root", "root");
+    std::ofstream myFile;
+    myFile.open("thisDirectory.txt");
+    myFile << "hi";
+    myFile.close();
+
+    m_dbConnected = dm.initialize("localhost", "root", "root");
+
+    m_categories = dm.readDatabase();
 }
 
 void GameManager::addCategory(QString name)
@@ -194,6 +204,12 @@ void GameManager::reset()
         it->resetUsed();
         it++;
     }
+}
+
+
+QList<Category> GameManager::getAllCategories()
+{
+    return m_categories;
 }
 
 

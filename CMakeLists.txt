@@ -13,6 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Sql REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -56,6 +57,7 @@ else()
 endif()
 
 target_link_libraries(QuestionGame PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(QuestionGame PRIVATE Qt6::Sql)
 
 set_target_properties(QuestionGame PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

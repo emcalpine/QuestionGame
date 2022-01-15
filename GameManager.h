@@ -45,6 +45,14 @@ public:
     // This operation resets all the asked questions.
     void reset();
 
+    // This operation returns a list of all the categories, used upon initialization.
+    QList<Category> getAllCategories();
+
+    // TEMPORARY
+    bool isDbConnected();
+
+    QString getDbError();
+
 
 private:    
     // A list of the categories in the game.
@@ -59,8 +67,21 @@ private:
     // This operation returns a question object matching a String.
     Question findQuestion(QString questionText, QString categoryName = "");
 
+    // A flag indicating the DB Connected. TEMPORARY.
+    bool m_dbConnected;
+
 signals:
 
 };
+
+inline bool GameManager::isDbConnected()
+{
+    return m_dbConnected;
+}
+
+inline QString GameManager::getDbError()
+{
+    return dm.getLastError();
+}
 
 #endif // GAMEMANAGER_H
